@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">PhiChartRender</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nisl velit,
+        in rutrum arcu ullamcorper sit amet. Proin a odio sollicitudin, commodo arcu eget,
+        ultricies est. Sed sed mollis purus, eget viverra odio. Mauris ac justo at ex blandit
+        dignissim. Sed condimentum, libero ut iaculis iaculis, risus nunc feugiat neque, sit amet
+        dictum risus est ac ex. Integer rutrum ultrices quam at pulvinar. Nullam euismod sem eget
+        turpis pellentesque, in porta mauris egestas. Nulla facilisi.\n\n
+        Phasellus ultricies dignissim dolor, ac blandit tellus lacinia ac. Nunc lobortis, nibh in
+        pulvinar tempor, turpis lectus imperdiet neque, sit amet malesuada quam lectus et purus.
+        Vestibulum volutpat est non orci aliquam, in tincidunt risus viverra. Suspendisse quis
+        molestie lorem. Vivamus et nisl vehicula, fermentum nunc eget, gravida ipsum. Nam tincidunt
+        iaculis ante, in bibendum enim ultrices sit amet. Sed imperdiet pharetra orci, eu vestibulum
+        eros faucibus sed. Nulla sit amet quam urna. Sed euismod, justo dapibus malesuada varius,
+        nibh nisi dignissim lacus, sit amet hendrerit urna risus vitae dui. Aenean congue aliquet
+        augue, non convallis urna efficitur in. Proin dictum enim vitae orci tincidunt, sed placerat
+        metus vehicula. Curabitur in tellus a odio faucibus consequat.\n\n
+        Integer ultricies in ante sed vehicula. Ut viverra magna vitae sodales sodales. Nulla vitae
+        tortor at nunc viverra maximus. Proin venenatis, nibh eget ultrices bibendum, nunc lorem
+        semper enim, ac malesuada lacus augue sit amet risus. Cras consectetur a metus eu ornare.
+        Sed ac ipsum mi. Nullam lectus ante, dictum sit amet quam quis, sagittis auctor elit. Proin
+        bibendum aliquet magna vel pulvinar. Proin condimentum, libero ut ultrices sodales, sapien
+        urna bibendum nisl, a egestas urna orci sit amet mauris. Nulla facilisi. Donec vel tortor
+        vitae nisl fermentum commodo. Nullam quis purus tempor, rutrum lorem ac, ultrices quam.
+        Integer faucibus massa in mauris pulvinar luctus. Nullam nec nisl odio. Nullam vestibulum
+        massa vitae nulla faucibus bibendum. Nulla vitae urna non ante placerat iaculis eget quis
+        massa.
+    </string>
+
+    <!-- 添加的中英文提示文本 -->
+    <string name="server_started_title">Server Started</string>
+    <string name="server_started_message">HTTP server is now running on 127.0.0.1:9000</string>
+    <string name="server_started_title_cn">服务器已启动</string>
+    <string name="server_started_message_cn">HTTP服务器已在127.0.0.1:9000上运行</string>
+    <string name="open_webview">Open WebView</string>
+    <string name="open_webview_cn">打开WebView</string>
+    <string name="close">Close</string>
+    <string name="close_cn">关闭</string>
+    <string name="version_select">Select Version:</string>
+    <string name="version_select_cn">选择版本:</string>
+</resources>
