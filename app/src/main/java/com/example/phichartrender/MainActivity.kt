@@ -17,12 +17,16 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.example.phichartrender.databinding.ActivityMainBinding
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var httpServer: HttpServerManager
+    private lateinit var archiveManager: ArchiveManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,13 +39,12 @@ class MainActivity : AppCompatActivity() {
         // 初始化并启动HTTP服务器
         httpServer = HttpServerManager()
         httpServer.start()
+        
+        // 初始化存档管理器
+        archiveManager = ArchiveManager(this)
 
         // 显示服务器启动提示
         showServerStartedDialog()
-
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
 
         // 设置版本选择模块
         setupVersionSpinner()
@@ -71,8 +74,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openWebView() {
-        val intent = Intent(this, WebViewActivity::class.java)
-        startActivity(intent)
+        // 使用Handler将启动WebView的操作放到消息队列中，避免阻塞UI线程
+        Handler(Looper.getMainLooper()).post {
+            val intent = Intent(this, WebViewActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setupVersionSpinner() {
@@ -112,9 +118,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+        return super.onSupportNavigateUp()
     }
     
     override fun onDestroy() {
