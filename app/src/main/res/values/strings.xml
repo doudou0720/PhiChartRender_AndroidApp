@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PhiChartRender</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments navigation -->
+    <!-- Strings used for fragment navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
@@ -35,31 +35,44 @@
         Vestibulum volutpat est non orci aliquam, in tincidunt risus viverra. Suspendisse quis
         molestie lorem. Vivamus et nisl vehicula, fermentum nunc eget, gravida ipsum. Nam tincidunt
         iaculis ante, in bibendum enim ultrices sit amet. Sed imperdiet pharetra orci, eu vestibulum
-        eros faucibus sed. Nulla sit amet quam urna. Sed euismod, justo dapibus malesuada varius,
-        nibh nisi dignissim lacus, sit amet hendrerit urna risus vitae dui. Aenean congue aliquet
-        augue, non convallis urna efficitur in. Proin dictum enim vitae orci tincidunt, sed placerat
-        metus vehicula. Curabitur in tellus a odio faucibus consequat.\n\n
-        Integer ultricies in ante sed vehicula. Ut viverra magna vitae sodales sodales. Nulla vitae
-        tortor at nunc viverra maximus. Proin venenatis, nibh eget ultrices bibendum, nunc lorem
-        semper enim, ac malesuada lacus augue sit amet risus. Cras consectetur a metus eu ornare.
-        Sed ac ipsum mi. Nullam lectus ante, dictum sit amet quam quis, sagittis auctor elit. Proin
-        bibendum aliquet magna vel pulvinar. Proin condimentum, libero ut ultrices sodales, sapien
-        urna bibendum nisl, a egestas urna orci sit amet mauris. Nulla facilisi. Donec vel tortor
-        vitae nisl fermentum commodo. Nullam quis purus tempor, rutrum lorem ac, ultrices quam.
-        Integer faucibus massa in mauris pulvinar luctus. Nullam nec nisl odio. Nullam vestibulum
-        massa vitae nulla faucibus bibendum. Nulla vitae urna non ante placerat iaculis eget quis
-        massa.
+        justo lacinia eget. Pellentesque tempor, risus ac dignissim malesuada, sem sem venenatis
+        magna, eget tincidunt odio massa vitae justo. In ullamcorper mollis viverra. Integer
+        porttitor, metus ac viverra hendrerit, mauris justo tincidunt nisl, eget tincidunt lectus
+        magna sed lectus. Curabitur at metus in nisl faucibus egestas.\n\n
+        Donec cursus, enim et hendrerit placerat, leo mauris aliquam mauris, sed efficitur tellus
+        justo quis nisl. Nam tempor risus in ultricies sollicitudin. Duis lectus nisl, vestibulum
+        eget massa nec, tincidunt hendrerit mauris. Nulla facilisi. Nullam at mauris euismod,
+        bibendum enim nec, viverra nisl. Sed dapibus tortor eget odio dapibus, at ultricies neque
+        imperdiet. Nulla auctor varius purus, eget tristique sem interdum at. In hac habitasse
+        platea dictumst. Phasellus quis tempor est. Donec nec massa vel tellus condimentum egestas.
+        Donec eu erat molestie, faucibus metus eu, dignissim lorem. Nunc in malesuada nisl.
     </string>
-
-    <!-- 添加的中英文提示文本 -->
+    
     <string name="server_started_title">Server Started</string>
-    <string name="server_started_message">HTTP server is now running on 127.0.0.1:9000</string>
-    <string name="server_started_title_cn">服务器已启动</string>
-    <string name="server_started_message_cn">HTTP服务器已在127.0.0.1:9000上运行</string>
+    <string name="server_started_message">The HTTP server has been started.\nYou can now open the WebView to view the content.</string>
     <string name="open_webview">Open WebView</string>
-    <string name="open_webview_cn">打开WebView</string>
     <string name="close">Close</string>
-    <string name="close_cn">关闭</string>
+    
+    <!-- Settings strings -->
+    <string name="settings_title">Settings</string>
+    <string name="general_settings">General</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="dark_mode_summary">Enable dark theme for the application</string>
+    <string name="language">Language</string>
+    <string name="language_summary">Select application language</string>
+    
+    <string name="chart_settings">Chart Display</string>
+    <string name="chart_smoothness">Chart Smoothness</string>
+    <string name="chart_smoothness_summary">Adjust the smoothness of chart lines</string>
+    <string name="show_grid">Show Grid</string>
+    <string name="show_grid_summary">Display grid lines on charts</string>
+    
+    <string name="archive_settings">Archive Management</string>
+    <string name="manage_archives">Manage Archives</string>
+    <string name="manage_archives_summary">View and delete downloaded archives</string>
+    <string name="auto_delete_old_archives">Auto-delete Old Archives</string>
+    <string name="auto_delete_old_archives_summary">Automatically delete archives older than 30 days</string>
+    
+    <!-- Version select string -->
     <string name="version_select">Select Version:</string>
-    <string name="version_select_cn">选择版本:</string>
 </resources>

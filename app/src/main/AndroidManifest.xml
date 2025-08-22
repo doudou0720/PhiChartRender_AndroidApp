@@ -2,9 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- 添加网络权限 -->
+    <!-- 网络权限是必需的，因为应用需要访问本地HTTP服务器 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 网络状态权限对于检查网络连接是常用的，但在这个应用中可能不是必需的 -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> -->
 
     <application
         android:allowBackup="true"
@@ -31,8 +32,18 @@
         <!-- 添加WebViewActivity声明 -->
         <activity 
             android:name=".WebViewActivity"
-            android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
+            android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
+            android:configChanges="orientation|screenSize|keyboardHidden">
         </activity>
+        
+        <!-- 添加下载服务声明 -->
+        <service android:name=".DownloadService" />
+        
+        <!-- 添加设置页面Activity声明 -->
+        <activity 
+            android:name=".SettingsActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.PhiChartRender" />
     </application>
 
 </manifest>

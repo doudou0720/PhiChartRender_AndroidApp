@@ -46,6 +46,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.preference)
+    implementation(libs.androidx.work)
     // 添加AndroidX Activity依赖
     implementation("androidx.activity:activity-ktx:1.8.0")
     // 添加NanoHTTPD依赖用于HTTP服务器

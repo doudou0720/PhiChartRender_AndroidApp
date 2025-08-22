@@ -52,15 +52,31 @@
         massa.
     </string>
 
-    <!-- 添加的中英文提示文本 -->
     <string name="server_started_title">服务器已启动</string>
-    <string name="server_started_message">HTTP服务器已在127.0.0.1:9000上运行</string>
-    <string name="server_started_title_cn">Server Started</string>
-    <string name="server_started_message_cn">HTTP server is now running on 127.0.0.1:9000</string>
+    <string name="server_started_message">HTTP服务器已启动。您现在可以打开WebView查看内容。</string>
     <string name="open_webview">打开WebView</string>
-    <string name="open_webview_cn">Open WebView</string>
     <string name="close">关闭</string>
-    <string name="close_cn">Close</string>
+    
+    <!-- Settings strings -->
+    <string name="settings_title">设置</string>
+    <string name="general_settings">通用</string>
+    <string name="dark_mode">深色模式</string>
+    <string name="dark_mode_summary">为应用程序启用深色主题</string>
+    <string name="language">语言</string>
+    <string name="language_summary">选择应用程序语言</string>
+    
+    <string name="chart_settings">图表显示</string>
+    <string name="chart_smoothness">图表平滑度</string>
+    <string name="chart_smoothness_summary">调整图表线条的平滑度</string>
+    <string name="show_grid">显示网格</string>
+    <string name="show_grid_summary">在图表上显示网格线</string>
+    
+    <string name="archive_settings">存档管理</string>
+    <string name="manage_archives">管理存档</string>
+    <string name="manage_archives_summary">查看和删除已下载的存档</string>
+    <string name="auto_delete_old_archives">自动删除旧存档</string>
+    <string name="auto_delete_old_archives_summary">自动删除超过30天的存档</string>
+    
+    <!-- Version select string -->
     <string name="version_select">选择版本:</string>
-    <string name="version_select_cn">Select Version:</string>
 </resources>
