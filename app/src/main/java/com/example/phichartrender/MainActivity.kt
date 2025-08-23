@@ -6,27 +6,23 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.Spinner
 import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.example.phichartrender.databinding.ActivityMainBinding
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var httpServer: HttpServerManager
-    private lateinit var archiveManager: ArchiveManager
+    private var isServerRunning = false
+    private lateinit var openWebViewButton: Button
+    private lateinit var versionSpinner: Spinner
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,41 +32,53 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
-        // 初始化并启动HTTP服务器
+        // 初始化HTTP服务器但不立即启动
         httpServer = HttpServerManager()
-        httpServer.start()
         
-        // 初始化存档管理器
-        archiveManager = ArchiveManager(this)
-
-        // 显示服务器启动提示
-        showServerStartedDialog()
-
         // 设置版本选择模块
         setupVersionSpinner()
 
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
-                .setAnchorView(R.id.fab).show()
+            toggleServer()
         }
-    }
-
-    private fun showServerStartedDialog() {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle(R.string.server_started_title)
-        builder.setMessage(R.string.server_started_message)
         
-        builder.setPositiveButton(R.string.open_webview) { _, _ ->
+        // 设置打开WebView按钮的点击事件
+        openWebViewButton = findViewById<Button>(R.id.button_open_webview)
+        openWebViewButton.setOnClickListener {
             openWebView()
         }
         
-        builder.setNegativeButton(R.string.close) { dialog, _ ->
-            dialog.dismiss()
+        // 初始设置为启动服务
+        isServerRunning = false
+        toggleServer()
+    }
+
+    private fun toggleServer() {
+        if (isServerRunning) {
+            // 停止服务器
+            httpServer.stop()
+            isServerRunning = false
+            binding.fab.setImageResource(android.R.drawable.ic_media_play)
+            Toast.makeText(this, "Server stopped", Toast.LENGTH_SHORT).show()
+            
+            // 服务器停止时，禁用打开WebView按钮
+            openWebViewButton.isEnabled = false
+            
+            // 服务器停止时，启用版本选择
+            versionSpinner.isEnabled = true
+        } else {
+            // 启动服务器
+            httpServer.start()
+            isServerRunning = true
+            binding.fab.setImageResource(android.R.drawable.ic_media_pause)
+            Toast.makeText(this, "Server started", Toast.LENGTH_SHORT).show()
+            
+            // 服务器运行时，启用打开WebView按钮
+            openWebViewButton.isEnabled = true
+            
+            // 服务器运行时，禁用版本选择
+            versionSpinner.isEnabled = false
         }
-        
-        builder.setCancelable(false)
-        builder.show()
     }
 
     private fun openWebView() {
@@ -87,9 +95,10 @@ class MainActivity : AppCompatActivity() {
         
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, versions)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.versionSpinner.adapter = adapter
+        versionSpinner = findViewById<Spinner>(R.id.versionSpinner)
+        versionSpinner.adapter = adapter
         
-        binding.versionSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        versionSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 val selectedVersion = versions[position]
                 Toast.makeText(this@MainActivity, "Selected: $selectedVersion", Toast.LENGTH_SHORT).show()
@@ -99,6 +108,12 @@ class MainActivity : AppCompatActivity() {
                 // 空实现
             }
         }
+        
+        // 初始时启用版本选择
+        versionSpinner.isEnabled = true
+        
+        // 初始时禁用打开WebView按钮
+        openWebViewButton.isEnabled = false
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -113,16 +128,13 @@ class MainActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_settings -> {
-                openSettings()
+                // 打开设置页面
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    private fun openSettings() {
-        val intent = Intent(this, SettingsActivity::class.java)
-        startActivity(intent)
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -132,6 +144,8 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         // 停止HTTP服务器
-        httpServer.stop()
+        if (isServerRunning) {
+            httpServer.stop()
+        }
     }
 }

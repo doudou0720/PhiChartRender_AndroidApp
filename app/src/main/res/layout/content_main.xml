@@ -14,12 +14,12 @@
             android:layout_height="match_parent"
             android:padding="16dp">
 
-            <!-- 保留原来FirstFragment的元素 -->
+            <!-- 简化主界面内容 -->
             <TextView
                 android:id="@+id/textview_first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/lorem_ipsum"
+                android:text="PhiChartRender Service Controller"
                 app:layout_constraintBottom_toTopOf="@id/button_open_webview"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -32,21 +32,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/open_webview"
-                app:layout_constraintBottom_toTopOf="@id/version_spinner"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textview_first"
-                android:layout_marginBottom="16dp"/>
-
-            <!-- 保留版本选择Spinner -->
-            <Spinner
-                android:id="@+id/version_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button_open_webview" />
+                app:layout_constraintTop_toBottomOf="@id/textview_first" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

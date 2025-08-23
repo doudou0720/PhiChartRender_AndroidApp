@@ -29,21 +29,19 @@
             </intent-filter>
         </activity>
         
-        <!-- 添加WebViewActivity声明 -->
-        <activity 
+        <activity
             android:name=".WebViewActivity"
-            android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
-            android:configChanges="orientation|screenSize|keyboardHidden">
-        </activity>
+            android:configChanges="orientation|screenSize"
+            android:exported="false" />
         
         <!-- 添加下载服务声明 -->
         <service android:name=".DownloadService" />
         
-        <!-- 添加设置页面Activity声明 -->
-        <activity 
+        <activity
             android:name=".SettingsActivity"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.PhiChartRender" />
+            android:exported="false"
+            android:label="@string/settings_title"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

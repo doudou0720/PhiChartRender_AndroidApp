@@ -1,0 +1,54 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/general_settings">
+
+        <SwitchPreferenceCompat
+            app:key="dark_mode"
+            app:title="@string/dark_mode"
+            app:summary="@string/dark_mode_summary" />
+
+        <ListPreference
+            app:key="language"
+            app:title="@string/language"
+            app:summary="@string/language_summary"
+            app:entries="@array/language_entries"
+            app:entryValues="@array/language_values"
+            app:defaultValue="en" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/chart_settings">
+
+        <SeekBarPreference
+            app:key="chart_smoothness"
+            app:title="@string/chart_smoothness"
+            app:summary="@string/chart_smoothness_summary"
+            android:min="0"
+            android:max="100"
+            app:defaultValue="50" />
+
+        <SwitchPreferenceCompat
+            app:key="show_grid"
+            app:title="@string/show_grid"
+            app:summary="@string/show_grid_summary"
+            app:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/archive_settings">
+
+        <Preference
+            app:key="manage_archives"
+            app:title="@string/manage_archives"
+            app:summary="@string/manage_archives_summary" />
+
+        <SwitchPreferenceCompat
+            app:key="auto_delete_old_archives"
+            app:title="@string/auto_delete_old_archives"
+            app:summary="@string/auto_delete_old_archives_summary"
+            app:defaultValue="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
