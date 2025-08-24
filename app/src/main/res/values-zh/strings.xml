@@ -7,6 +7,7 @@
     <string name="second_fragment_label">第二个片段</string>
     <string name="next">下一个</string>
     <string name="previous">上一个</string>
+    <string name="settings_title">设置</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
@@ -53,17 +54,14 @@
     </string>
 
     <string name="server_started_title">服务器已启动</string>
-    <string name="server_started_message">HTTP服务器已启动。您现在可以打开WebView查看内容。</string>
     <string name="open_webview">打开WebView</string>
     <string name="close">关闭</string>
     
-    <!-- Settings strings -->
-    <string name="settings_title">设置</string>
-    <string name="general_settings">通用</string>
-    <string name="dark_mode">深色模式</string>
-    <string name="dark_mode_summary">为应用程序启用深色主题</string>
+    <string name="dark_mode">主题</string>
+    <string name="dark_mode_summary">选择应用主题</string>
     <string name="language">语言</string>
-    <string name="language_summary">选择应用程序语言</string>
+    <string name="language_summary">更改应用程序语言</string>
+    <string name="general_settings">通用设置</string>
     
     <string name="chart_settings">图表显示</string>
     <string name="chart_smoothness">图表平滑度</string>
@@ -71,11 +69,16 @@
     <string name="show_grid">显示网格</string>
     <string name="show_grid_summary">在图表上显示网格线</string>
     
-    <string name="archive_settings">存档管理</string>
+    <string name="archive_settings">存档设置</string>
     <string name="manage_archives">管理存档</string>
-    <string name="manage_archives_summary">查看和删除已下载的存档</string>
-    <string name="auto_delete_old_archives">自动删除旧存档</string>
-    <string name="auto_delete_old_archives_summary">自动删除超过30天的存档</string>
+    <string name="manage_archives_summary">管理已下载的图表存档</string>
+    
+    <!-- Download settings -->
+    <string name="download_settings">下载设置</string>
+    <string name="download_acceleration">下载加速</string>
+    <string name="download_acceleration_summary">启用下载加速以在中国获得更好的速度</string>
+    <string name="acceleration_source">加速源</string>
+    <string name="acceleration_source_summary">选择加速服务提供商</string>
     
     <!-- Version select string -->
     <string name="version_select">选择版本:</string>

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">PhiChartRender</string>
     <string name="action_settings">Settings</string>
+    <string name="settings_title">Settings</string>
     <!-- Strings used for fragment navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -49,17 +50,17 @@
     </string>
     
     <string name="server_started_title">Server Started</string>
-    <string name="server_started_message">The HTTP server has been started.\nYou can now open the WebView to view the content.</string>
+    <string name="dark_mode">Theme</string>
+    <string name="dark_mode_summary">Select app theme</string>
+    <string name="language">Language</string>
+    <string name="language_summary">Change the application language</string>
+    <string name="general_settings">General Settings</string>
+    <string name="archive_settings">Archive Settings</string>
+    <string name="manage_archives">Manage Archives</string>
+    <string name="manage_archives_summary">Manage downloaded chart archives</string>
+    
     <string name="open_webview">Open WebView</string>
     <string name="close">Close</string>
-    
-    <!-- Settings strings -->
-    <string name="settings_title">Settings</string>
-    <string name="general_settings">General</string>
-    <string name="dark_mode">Dark Mode</string>
-    <string name="dark_mode_summary">Enable dark theme for the application</string>
-    <string name="language">Language</string>
-    <string name="language_summary">Select application language</string>
     
     <string name="chart_settings">Chart Display</string>
     <string name="chart_smoothness">Chart Smoothness</string>
@@ -67,11 +68,12 @@
     <string name="show_grid">Show Grid</string>
     <string name="show_grid_summary">Display grid lines on charts</string>
     
-    <string name="archive_settings">Archive Management</string>
-    <string name="manage_archives">Manage Archives</string>
-    <string name="manage_archives_summary">View and delete downloaded archives</string>
-    <string name="auto_delete_old_archives">Auto-delete Old Archives</string>
-    <string name="auto_delete_old_archives_summary">Automatically delete archives older than 30 days</string>
+    <!-- Download settings -->
+    <string name="download_settings">Download Settings</string>
+    <string name="download_acceleration">Download Acceleration</string>
+    <string name="download_acceleration_summary">Enable download acceleration for better speed in China</string>
+    <string name="acceleration_source">Acceleration Source</string>
+    <string name="acceleration_source_summary">Select the acceleration service provider</string>
     
     <!-- Version select string -->
     <string name="version_select">Select Version:</string>

@@ -32,10 +32,46 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/open_webview"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/button_download"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textview_first" />
+                
+            <!-- 添加下载按钮 -->
+            <Button
+                android:id="@+id/button_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="下载选定版本"
+                app:layout_constraintBottom_toTopOf="@id/download_progress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_open_webview" />
+                
+            <!-- 下载进度条 -->
+            <ProgressBar
+                android:id="@+id/download_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/download_status"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_download" />
+                
+            <!-- 下载状态文本 -->
+            <TextView
+                android:id="@+id/download_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="准备下载..."
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/download_progress" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

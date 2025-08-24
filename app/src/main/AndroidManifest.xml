@@ -2,10 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- 网络权限是必需的，因为应用需要访问本地HTTP服务器 -->
+    <!-- 网络权限是必需的，因为应用需要访问本地HTTP服务器和获取GitHub信息 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- 网络状态权限对于检查网络连接是常用的，但在这个应用中可能不是必需的 -->
-    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" 
+        android:maxSdkVersion="28" />
 
     <application
         android:allowBackup="true"
@@ -34,14 +35,17 @@
             android:configChanges="orientation|screenSize"
             android:exported="false" />
         
-        <!-- 添加下载服务声明 -->
-        <service android:name=".DownloadService" />
-        
         <activity
             android:name=".SettingsActivity"
             android:exported="false"
             android:label="@string/settings_title"
             android:parentActivityName=".MainActivity" />
+            
+        <activity
+            android:name=".ArchiveManagerActivity"
+            android:exported="false"
+            android:label="Manage Archives"
+            android:parentActivityName=".SettingsActivity" />
     </application>
 
 </manifest>

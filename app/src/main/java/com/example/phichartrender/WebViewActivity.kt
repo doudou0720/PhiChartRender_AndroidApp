@@ -103,9 +103,12 @@ class WebViewActivity : Activity() {
             // 根据API级别使用不同的全屏实现方式
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 // Android 11及以上版本使用WindowInsetsController
-                window.insetsController?.let {
-                    it.hide(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
-                    it.systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+                // 确保decorView不为空
+                if (window.decorView != null) {
+                    window.insetsController?.let {
+                        it.hide(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
+                        it.systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+                    }
                 }
             } else {
                 // Android 11以下版本使用旧的FLAG_FULLSCREEN
